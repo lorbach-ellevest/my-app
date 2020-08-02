@@ -1,0 +1,17 @@
+.listPage {
+	composes: fadeIn from '../../css/main.module.css';
+	width: 750px;
+	border: 1px solid #c3c3c3;
+}
+.itemsSection {
+
+}
+
+/* mobile */
+@media (max-device-width: 767px), (max-width: 767px) {
+	.listPage {
+		width: 100%;
+		border: none;
+		border-top: 1px solid #c3c3c3;
+	}
+}

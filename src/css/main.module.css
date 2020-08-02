@@ -1,0 +1,55 @@
+.cyan {
+	color: #44c0ff;
+}
+.titles {
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+.btn {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease-in-out;
+  }
+    .btn:focus {
+      outline: none !important;
+      cursor: pointer !important;
+      transition: all 0.25s ease-in-out;
+    }
+    .btn:hover {
+    	outline: none !important;
+      transition: all 0.25s ease-in-out;
+    }
+.btnIcon {
+	composes: btn;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid #44c0ff;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #fff;
+	text-indent: -9999px;
+}
+	.btnIcon:hover {
+		background-color: #44c0ff;
+	}
+/* animation */
+@-webkit-keyframes fadeIn {
+  from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn {
+  from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn {
+  from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+
+  animation-duration: 0.25s;
+  -webkit-animation-duration: 0.25s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+}
