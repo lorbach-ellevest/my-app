@@ -7,7 +7,7 @@ import { loadItems } from './actions/itemActions.js'
 
 import configureStore from './store/configureStore'
 
-import App from './App.js'
+import App from './App.jsx'
 
 const store = configureStore();
 

@@ -4,9 +4,10 @@ import ListPageContainer from './components/ListPage'
 import styles from './App.module.css'
 
 /**
+  3. NF: ErrorBoundary (ErrorBoundary/ListPage)
   1. getDerivedStateFromProps() / getSnapshotBeforeUpdate()
   2. Fragment + return strings / numbers / arrays
-  3. ErrorBoundary
+
   4. Portals
   5. Context
   6. PureComponent  / React.memo()

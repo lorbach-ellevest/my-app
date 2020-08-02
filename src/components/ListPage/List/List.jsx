@@ -33,7 +33,7 @@ return (
 					</div>
 			}
 			{!!props.items.length && <p>
-				My favorite is <span style={{fontWeight: 'bold'}}>{props.items[1].title}</span>
+				Lucy's favorite is <span style={{fontWeight: 'bold'}}>{props.items[1].title}</span>
 				</p>}
 		</ul>
 	)

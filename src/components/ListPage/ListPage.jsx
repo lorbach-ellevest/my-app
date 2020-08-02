@@ -6,6 +6,7 @@ import Modal from '../modals/Modal'
 import ListHeader from './ListHeader/ListHeader'
 import List from './List/List'
 import ItemForm from './ItemForm/ItemForm'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 
 import styles from './ListPage.module.css'
 
@@ -56,7 +57,7 @@ class ListPage extends React.Component {
 		this.handleToggleModal();
 	}
 
-	handleToggleModal = () => { console.log('togglemodal');
+	handleToggleModal = () => {
 		this.setState(prevState => ({
 			showModal: !prevState.showModal,
 		}))
@@ -87,11 +88,13 @@ class ListPage extends React.Component {
 				}
 				<section className={styles.itemsSection}>
 					<ListHeader handleClickNew={this.handleToggleModal} />
-					<List
-						items={items}
-						media={media}
-						handleDelete={this.handleDelete}
-						handleEditItem={this.handleClickEdit} />
+					{/* <ErrorBoundary> */}
+						<List
+							items={items}
+							media={media}
+							handleDelete={this.handleDelete}
+							handleEditItem={this.handleClickEdit} />
+						{/*  </ErrorBoundary> */}
 				</section>
 			</div>
 		);
