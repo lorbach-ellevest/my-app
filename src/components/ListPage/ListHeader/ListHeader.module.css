@@ -1,0 +1,30 @@
+.listHeader {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	height: 90px;
+	padding: 10px 20px;
+	border-bottom: 4px solid #44c0ff;
+}
+.title {
+	composes: titles from '../../../css/main.module.css';
+	font-size: 24px;
+
+}
+.span {
+	font-style: italic;
+	font-size: 12px;
+	text-transform: lowercase;
+}
+.btnAdd {
+	composes: btnIcon from '../../../css/main.module.css';
+	background-image: url(../../../images/plusCy.png);
+}
+.btnAdd:hover {
+	background-image: url(../../../images/plusWh.png);
+}

@@ -1,0 +1,83 @@
+.item {
+	width: 100%;
+	padding: 10px 0 0;
+	background-color: #fff;
+	box-shadow: 4px 6px 4px rgba(0,0,0,0.1);
+}
+.itemHeader {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	padding: 5px 20px 10px;
+	border-bottom: 1px dashed #c3c3c3;
+}
+.title {
+	composes: titles from '../../../css/main.module.css';
+	font-size: 18px;
+	margin: 0px auto 0px 0px;
+}
+
+.btnCheck {
+	composes: btnIcon from '../../../css/main.module.css';
+}
+
+.btnEdit {
+	composes: btnIcon from '../../../css/main.module.css';
+	background-image: url(../../../images/pencilCy.png);
+}
+
+.btnEdit:hover {
+	background-image: url(../../../images/pencilWh.png);
+}
+
+.btnDelete {
+	composes: btnIcon from '../../../css/main.module.css';
+	background-image: url(../../../images/deleteCy.png);
+	margin: 0px 10px;
+}
+
+.btnDelete:hover {
+	background-image: url(../../../images/deleteWh.png);
+}
+
+.paragraph {
+	height: 75px;
+	margin: 10px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 25px;
+	background-color: #7a7a7a;
+	padding: 5px 10px;
+}
+
+.counter {
+	color: #fff;
+}
+
+.btnCheck {
+	composes: btnIcon from '../../../css/main.module.css';
+	background-image: url(../../../images/plusCy.png);
+	width: 20px;
+	height: 20px;
+	background-color: transparent;
+}
+
+.btnCheck:hover {
+	background-image: url(../../../images/plusWh.png);
+}
+
+/* mobile */
+@media (max-device-width: 767px), (max-width: 767px) {
+	.itemHeader {
+		border-bottom: none;
+	}
+}
