@@ -2,7 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Motion, spring, presets } from 'react-motion'
 
-import Item from '../Item/Item.jsx'
+import Item from 'components/Item/Item.jsx'
+// Portals demo
+// import Item from 'components/Item/ItemWithPortal.jsx'
+
 import styles from './List.module.css'
 
 const List = props => {

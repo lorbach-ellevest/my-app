@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import styles from './Modal.module.css'
 
-
 const Modal = props => (
 	<div className={styles.modal}>
 		{props.children}

@@ -47,7 +47,8 @@ export function loadItems() {
 export function saveItem(item) {
 	return dispatch => {
 		return mockApi.saveItem(item)
-			.then(savedItem => { item.id
+			.then(savedItem => {
+				item.id
 				? dispatch(updateItemSuccess(item))
 				: dispatch(addItemSuccess(item));
 		}).catch(error => {

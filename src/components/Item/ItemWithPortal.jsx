@@ -1,27 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+
+import ModalPortal from 'components/modals/ModalPortal'
+import Form from 'components/Form'
 
 import styles from './Item.module.css'
 
-class Item extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			count: 1,
-		}
-	}
+/** Item with Portal **/
+const Item = ({ item, media, handleDelete, handleEditItem }) => {
+	const [showModal, setShowModal] = useState(false)
+	const toggleModal = () => setShowModal(!showModal)
 
-	handleClick() { console.log('handleclick');
-		this.setState(prevState => ({
-			count: ++prevState.count,
-		}))
-	}
-
-	render() {
-		const { item, media, handleDelete, handleEditItem } = this.props
-		const { count } = this.state
-
-		return  (
+	return (
+		<>
 			<div className={styles.item}>
 				<div className={styles.itemHeader}>
 					<h5 className={styles.title}>{item.title}</h5>
@@ -29,7 +20,7 @@ class Item extends React.Component {
 					<button
 						key="edit"
 						className={styles.btnEdit}
-						onClick={() => handleEditItem(item)}>
+						onClick={toggleModal}>
 						Edit
 					</button>
 					<button
@@ -47,17 +38,17 @@ class Item extends React.Component {
 						}
 					</p>
 				}
-				<footer className={styles.footer}>
-					<div className={styles.counter}>{count} Likes </div>
-					<button
-						key="check"
-						className={styles.btnCheck}
-						onClick={() => this.handleClick()}/>
-				</footer>
 			</div>
-		)
-	}
+
+			{showModal && (
+				<ModalPortal>
+					<Form item={item} handleCloseModal={toggleModal} />
+				</ModalPortal>
+			)}
+		</>
+	)
 }
+
 
 Item.propTypes = {
 	item: PropTypes.object.isRequired,

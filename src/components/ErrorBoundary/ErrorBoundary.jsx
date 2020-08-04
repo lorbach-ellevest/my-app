@@ -1,5 +1,5 @@
 import React from 'react'
-/* 
+/*
  * ErrorBoundary are React components that catch JS errors in their child component tree, log them and display a UI
  * Error Boundaries caught errors during the render  & the lifecylce method
  * They do not catch errors on event handlers!
@@ -7,7 +7,7 @@ import React from 'react'
  *
 */
 class ErrorBoundary extends React.Component {
-  constructor(props) { console.log('ErrorBoundary');
+  constructor(props) {
     super(props);
     this.state = { hasError: false };
   }
@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     // You can also log the error to an error reporting service
-    console.log('Trigger analytics');
+    console.log('Trigger analytics?');
   }
 
   render() {

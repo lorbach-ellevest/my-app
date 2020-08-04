@@ -1,0 +1,16 @@
+.counterTag {
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	z-index: 10;
+	width: 100px;
+	height: 60px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	background-color: #44c0ff;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	font-size: 28px;
+	font-weight: bold;
+}
