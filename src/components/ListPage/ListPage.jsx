@@ -4,6 +4,15 @@ import PropTypes from 'prop-types'
 // Error Boundary demo
 // import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary'
 
+<<<<<<< HEAD
+=======
+// Portals demo + Counter returns strings
+// import CounterBadge from 'components/CounterBadge/CounterBadge'
+// import CounterPortal from 'components/CounterBadge/CounterPortal'
+// import ListHeader from './ListHeader/ListHeaderWithPortal'
+
+
+>>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 import ItemForm from 'components/ItemForm'
 import Modal from 'components/modals/ModalPortal'
 
@@ -26,7 +35,16 @@ class ListPage extends React.Component {
 			},
 		}
 	}
+<<<<<<< HEAD
 
+=======
+	/* Lifecylce methods note:
+	 * The following methods have been deprecated:
+	 * componentWillMount -> UNSAFE_componentWillMount -> use componentDidMount()
+	 * componentWillReceiveProps -> UNSAFE_componentWillReceiveProps -> use getDerivedStateFromProps(props, state) => sets new state
+	 * componentWillUpdate -> UNSAFE_componentWillUpdate -> use getSnapshotBeforeUpdate( prevProps, prevState)
+	 */
+>>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 	UNSAFE__componentWillReceiveProps(nextProps) {
 		this.setState(() => ({
 			activeItem: null,
@@ -67,6 +85,15 @@ class ListPage extends React.Component {
 							handleEditItem={this.handleOpenModal}
 						/>
 					{/*  </ErrorBoundary> */}
+<<<<<<< HEAD
+=======
+
+					{/* Portals
+						<CounterPortal>
+						<CounterBadge count={items.length} />
+					</CounterPortal>
+					*/}
+>>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 				</section>
 			</div>
 		);
