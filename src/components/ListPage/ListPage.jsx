@@ -7,6 +7,7 @@ import CounterPortal from 'components/CounterBadge/CounterPortal'
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary'
 
 import ListHeader from './ListHeader/ListHeader'
+
 import List from './List/List'
 
 import styles from './ListPage.module.css'

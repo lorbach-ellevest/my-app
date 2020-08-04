@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 
 import PropTypes from 'prop-types'
@@ -54,11 +55,50 @@ const Item = ({ item, media, handleDelete }) => {
 	)
 }
 
+=======
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import styles from './Item.module.css'
+
+const Item = ({ item, media, handleDelete, handleEditItem }) => (
+	<div className={styles.item}>
+		<div className={styles.itemHeader}>
+			<h5 className={styles.title}>{item.title}</h5>
+
+			<button
+				key="edit"
+				className={styles.btnEdit}
+				onClick={() => handleEditItem(item)}>
+				Edit
+			</button>
+			<button
+				key="delete"
+				className={styles.btnDelete}
+				onClick={() => handleDelete(item.id)}>
+				Delete
+			</button>
+		</div>
+		{!media.mobile &&
+			<p className={styles.paragraph}>
+				{item.description
+					? item.description
+					: 'This item has no description'
+				}
+			</p>
+		}
+	</div>
+)
+>>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 
 Item.propTypes = {
 	item: PropTypes.object.isRequired,
 	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
+<<<<<<< HEAD
+=======
+	handleEditItem: PropTypes.func.isRequired
+>>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 }
 
 export default Item
