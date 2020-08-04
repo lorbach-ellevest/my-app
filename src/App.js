@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ListPage from 'components/ListPage'
-import styles from 'App.module.css'
+import ListPageContainer from './components/ListPage'
+import styles from './App.module.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <div className={styles.appMain}>
         <h2 className={styles.appTitle}>Simple List App</h2>
-        <ListPage media={this.state.media} />
+        <ListPageContainer media={this.state.media} />
       </div>
     )
   }

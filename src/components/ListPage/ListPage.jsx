@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Modal from '../modals/Modal'
+import ItemForm from 'components/ItemForm'
+import Modal from 'components/modals/Modal'
 
 import ListHeader from './ListHeader/ListHeader'
+
 import List from './List/List'
-import ItemForm from './ItemForm/ItemForm'
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 
 import styles from './ListPage.module.css'
 
@@ -16,7 +16,6 @@ class ListPage extends React.Component {
 
 		this.state = {
 			showModal: false,
-			errors: {},
 			activeItem: {
 				id: '',
 				title: '',
@@ -24,77 +23,51 @@ class ListPage extends React.Component {
 			},
 		}
 	}
-
-	componentWillReceiveProps(nextProps) {
-		let lastItem = nextProps.items[nextProps.items.length - 1];
-		this.setState({
-			editing: false,
-			activeItem: {
-				id: lastItem ? lastItem.id + 1 : 1,
-				title: '',
-				description: '' }
-		});
+	/* Lifecylce methods note:
+	 * The following methods have been deprecated:
+	 * componentWillMount -> UNSAFE_componentWillMount -> use componentDidMount()
+	 * componentWillReceiveProps -> UNSAFE_componentWillReceiveProps -> use getDerivedStateFromProps(props, state) => sets new state
+	 * componentWillUpdate -> UNSAFE_componentWillUpdate -> use getSnapshotBeforeUpdate( prevProps, prevState)
+	 */
+	UNSAFE__componentWillReceiveProps(nextProps) {
+		this.setState(() => ({
+			activeItem: null,
+		}))
 	}
 
-	handleChange = e => {
-		e.preventDefault();
-		let activeItem = Object.assign({}, this.state.activeItem, {[e.target.name]: e.target.value });
-		this.setState({ activeItem });
-	}
-
-	handleClickEdit = item => {
-		this.setState({ activeItem: item });
-		this.handleToggleModal();
-	}
-
-	handleDelete = itemId => {
-		this.props.actions.deleteItem(itemId);
-	}
-
-	handleSaveItem = e => {
-		e.preventDefault();
-		this.props.actions.saveItem(this.state.activeItem);
-		this.handleToggleModal();
-	}
-
-	handleToggleModal = () => {
-		this.setState(prevState => ({
+	handleOpenModal = item => {
+		this.setState((prevState) => ({
+			activeItem: item,
 			showModal: !prevState.showModal,
 		}))
 	}
 
-	resetActiveItem= () => {
-		this.setState({
-			activeItem: {id: '', title: '', description: ''},
-			errors: {},
-			showModal: false
-		});
+	handleCloseModal = () => {
+		this.setState((prevState) => ({
+			activeItem: null,
+			showModal: !prevState.showModal,
+		}))
 	}
 
 	render() {
-		let { items, media } = this.props;
+			let { actions: { deleteItem }, items, media } = this.props;
 
 		return (
-			<div className={styles.listPage}>
+			<div id="listPage" className={styles.listPage}>
 				{this.state.showModal &&
 					<Modal>
-						<ItemForm
-							errors={this.state.errors}
-							item={this.state.activeItem}
-							onChange={this.handleChange}
-							handleSaveItem={this.handleSaveItem}
-							handleCloseModal={this.resetActiveItem} />
+						<ItemForm item={this.state.activeItem} handleCloseModal={this.handleCloseModal} />
 					</Modal>
 				}
 				<section className={styles.itemsSection}>
-					<ListHeader handleClickNew={this.handleToggleModal} />
-					{/* <ErrorBoundary> */}
-						<List
-							items={items}
-							media={media}
-							handleDelete={this.handleDelete}
-							handleEditItem={this.handleClickEdit} />
-						{/*  </ErrorBoundary> */}
+					<ListHeader handleClickNew={this.handleOpenModal} />
+
+					<List
+						items={items}
+						media={media}
+						handleDelete={deleteItem}
+						handleEditItem={this.handleOpenModal}
+					/>
 				</section>
 			</div>
 		);
