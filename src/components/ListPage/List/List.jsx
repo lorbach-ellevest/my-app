@@ -20,7 +20,7 @@ const List = props => {
 						media={props.media}
 						item={item}
 						handleDelete={props.handleDelete}
-						handleEditItem={props.handleEditItem} />
+					/>
 				</li> }
 		</Motion>
 	)
@@ -44,7 +44,6 @@ List.propTypes = {
 	items: PropTypes.array.isRequired,
 	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
-	handleEditItem: PropTypes.func.isRequired
 };
 
 export default List

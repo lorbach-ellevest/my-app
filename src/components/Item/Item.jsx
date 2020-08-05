@@ -53,7 +53,6 @@ Item.propTypes = {
 	item: PropTypes.object.isRequired,
 	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
-	handleEditItem: PropTypes.func.isRequired
 }
 
 export default Item
