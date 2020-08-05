@@ -26,13 +26,7 @@ const List = props => {
 	)
 return (
 		<ul className={styles.list}>
-			{props.items.length > 0
-				? listOfItems
-				: <div>
-						<p>Loading...</p>
-						<p>Please be patient!</p>
-					</div>
-			}
+			{listOfItems}
 			{!!props.items.length && <p>
 				Lucy's favorite is <span style={{fontWeight: 'bold'}}>{props.items[1].title}</span>
 				</p>}

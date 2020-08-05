@@ -1,2 +1,2 @@
 // simulates delay from real calls to server
-export default 1200;
+export default 3200;

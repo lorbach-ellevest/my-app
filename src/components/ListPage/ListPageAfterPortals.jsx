@@ -6,6 +6,8 @@ import CounterPortal from 'components/CounterBadge/CounterPortal'
 
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary'
 
+import Loader from 'components/Loader/Loader'
+
 import ListHeader from './ListHeader/ListHeaderWithPortal'
 import List from './List/List'
 
@@ -17,11 +19,11 @@ const ListPage = ({ actions: { deleteItem }, items, media }) => (
 		<section className={styles.itemsSection}>
 			<ListHeader />
 			<ErrorBoundary>
-				<List
-					items={items}
-					media={media}
-					handleDelete={deleteItem}
-				/>
+				{items.length
+					? <List items={items} media={media} handleDelete={deleteItem} />
+					: <Loader />
+				}
+
 			</ErrorBoundary>
 
 			<CounterPortal>
