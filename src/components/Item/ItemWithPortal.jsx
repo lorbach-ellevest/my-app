@@ -7,7 +7,7 @@ import Form from 'components/Form'
 import styles from './Item.module.css'
 
 /** Item with Portal **/
-const Item = ({ item, media, handleDelete, handleEditItem }) => {
+const Item = ({ item, media, handleDelete }) => {
 	const [showModal, setShowModal] = useState(false)
 	const toggleModal = () => setShowModal(!showModal)
 
@@ -54,7 +54,6 @@ Item.propTypes = {
 	item: PropTypes.object.isRequired,
 	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
-	handleEditItem: PropTypes.func.isRequired
 }
 
 export default Item

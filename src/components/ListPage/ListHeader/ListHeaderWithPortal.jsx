@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 import ModalPortal from 'components/modals/ModalPortal'
 import Form from 'components/Form'
 import styles from './ListHeader.module.css'
 
 // List Header with Portals
-const ListHeader = props => {
+const ListHeader = () => {
 	/* React note on Hooks:
 		Functional Components are pure functions (function that given the same parameters will always return the same result)
 		Functional Components are easier to read and test, less compilation => better performance
@@ -39,10 +38,6 @@ const ListHeader = props => {
 			)}
 		</>
 	)
-}
-
-ListHeader.propTypes = {
-	handleClickNew: PropTypes.func.isRequired
 }
 
 export default ListHeader
