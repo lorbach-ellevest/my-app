@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Motion, spring, presets } from 'react-motion'
 
 import Item from 'components/Item/Item.jsx'
+// import Item from 'components/Item/ItemSuspense.jsx'
 
 import styles from './List.module.css'
 
@@ -10,9 +11,9 @@ const List = props => {
 	const listOfItems = props.items.map((item, index) =>
 		<Motion
 			key={index}
-			defaultStyle={{maxh: 0}}
-			style={{maxh: spring(200, presets.gentle)}}>
-			{({maxh}) =>
+			defaultStyle={{h: 0, maxh: 0}}
+			style={{h: spring(200, presets.gentle), maxh: spring(800, presets.gentle)}}>
+			{({h, maxh}) =>
 				<li
 					className={styles.listItem}
 					style={{maxHeight: `${maxh}px`, overflow: 'hidden'}} >
