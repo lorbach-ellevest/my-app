@@ -7,14 +7,17 @@ const items = [
   {
     id: "decide-events-theme",
     title: "Decide Event's Theme",
-    description: "Conceptualize your idea, mind the targeted audience for the particular event."
+    description: "Conceptualize your idea, mind the targeted audience for the particular event.",
+    src: "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_720,q_75,w_1400/v1/clients/newyorkcity/Skyline_Manhattan_Bridge_Brooklyn_Manhattan_NYC_Julienne_Schaer_022_007885f9-2552-464f-9c78-12b4082b71c2.jpg",
   },
   {
     id: "View-locations",
     title: "View locations",
-    description: "Sign-up contract with venue. Make sure all aspects are included as: cost for venue, hours of access, services included, etc."
+    description: "Sign-up contract with venue. Make sure all aspects are included as: cost for venue, hours of access, services included, etc.",
+    src: "https://media.timeout.com/images/105628676/image.jpg"
   }
 ]
+
 
 const replaceAll = (str, find, replace) => str.replace(new RegExp(find, 'g'), replace)
 

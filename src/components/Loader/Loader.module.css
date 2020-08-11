@@ -3,9 +3,9 @@
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   -ms-align-items: center;
   align-items: center;
-  width: 100%;
-  height: 400px;
+  height: 200px;
+  padding: 40px;
 }
