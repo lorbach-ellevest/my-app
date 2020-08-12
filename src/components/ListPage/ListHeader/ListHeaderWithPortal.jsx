@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import ModalPortal from 'components/modals/ModalPortal'
-import Form from 'components/Form'
+import ItemForm from 'components/ItemForm'
 import styles from './ListHeader.module.css'
 
 // List Header with Portals
@@ -34,7 +34,7 @@ const ListHeader = props => {
 
 			{showModal && (
 				<ModalPortal>
-					<Form handleCloseModal={toggleModal} />
+					<ItemForm handleCloseModal={toggleModal} />
 				</ModalPortal>
 			)}
 		</>

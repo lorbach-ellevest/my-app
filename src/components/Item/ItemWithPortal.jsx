@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import ModalPortal from 'components/modals/ModalPortal'
-import Form from 'components/Form'
+import ItemForm from 'components/ItemForm'
 
 import styles from './Item.module.css'
 
@@ -42,7 +42,7 @@ const Item = ({ item, media, handleDelete, handleEditItem }) => {
 
 			{showModal && (
 				<ModalPortal>
-					<Form item={item} handleCloseModal={toggleModal} />
+					<ItemForm item={item} handleCloseModal={toggleModal} />
 				</ModalPortal>
 			)}
 		</>
