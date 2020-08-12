@@ -4,12 +4,6 @@ import PropTypes from 'prop-types'
 // Error Boundary demo
 // import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary'
 
-// Portals demo + Counter returns strings
-// import CounterBadge from 'components/CounterBadge/CounterBadge'
-// import CounterPortal from 'components/CounterBadge/CounterPortal'
-// import ListHeader from './ListHeader/ListHeaderWithPortal'
-
-
 import ItemForm from 'components/ItemForm'
 import Modal from 'components/modals/ModalPortal'
 
@@ -32,12 +26,7 @@ class ListPage extends React.Component {
 			},
 		}
 	}
-	/* Lifecylce methods note:
-	 * The following methods have been deprecated:
-	 * componentWillMount -> UNSAFE_componentWillMount -> use componentDidMount()
-	 * componentWillReceiveProps -> UNSAFE_componentWillReceiveProps -> use getDerivedStateFromProps(props, state) => sets new state
-	 * componentWillUpdate -> UNSAFE_componentWillUpdate -> use getSnapshotBeforeUpdate( prevProps, prevState)
-	 */
+
 	UNSAFE__componentWillReceiveProps(nextProps) {
 		this.setState(() => ({
 			activeItem: null,
@@ -78,12 +67,6 @@ class ListPage extends React.Component {
 							handleEditItem={this.handleOpenModal}
 						/>
 					{/*  </ErrorBoundary> */}
-
-					{/* Portals
-						<CounterPortal>
-						<CounterBadge count={items.length} />
-					</CounterPortal>
-					*/}
 				</section>
 			</div>
 		);

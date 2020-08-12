@@ -5,8 +5,6 @@ import * as itemActions from '../../actions/itemActions.js';
 
 
 import ListPage from './ListPage'
-// Portals demo
-// import ListPage from './ListPageAfterPortals'
 
 const mapStateToProps = state => ({
 	items: state.items
