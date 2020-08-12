@@ -6,18 +6,19 @@ import styles from './Modal.module.css'
 
 
 /*
- * Portals provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+ * Portals provide a way to render children into a DOM node that exists outside the DOM hierarchy
+ * of the parent component.
  * ReactDOM.createPortal(this.props.children, contentWrapper)
  */
 
 // Id of the html element where our component will be appended
-const appNode = document.getElementById('app');
+const container = document.getElementById('app');
 
 class Modal extends React.Component {
 	constructor(props) {
     super(props);
 		// Wrapper were content will be mounted
-    this.el = document.createElement('div');
+    this.contentWrapper = document.createElement('div');
   }
 
   componentDidMount() {
@@ -29,11 +30,11 @@ class Modal extends React.Component {
     // DOM node, or uses 'autoFocus' in a descendant, add
     // state to Modal and only render the children when Modal
     // is inserted in the DOM tree.
-    appNode.appendChild(this.el);
+    container.appendChild(this.contentWrapper);
   }
 
   componentWillUnmount() {
-    appNode.removeChild(this.el);
+    container.removeChild(this.contentWrapper);
   }
 
 	render() {
@@ -42,7 +43,7 @@ class Modal extends React.Component {
 				<div className={styles.modal}>
 					{this.props.children}
 				</div>,
-				this.el
+				this.contentWrapper
 			)
 		)
 	}
