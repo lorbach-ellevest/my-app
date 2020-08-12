@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 
 import * as itemActions from '../../actions/itemActions.js';
 
-import ListPage from './ListPageAfterPortals'
+import ListPage from './ListPage'
 
 const mapStateToProps = state => ({
 	items: state.items

@@ -1,14 +1,16 @@
-<<<<<<< HEAD
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 
 import PropTypes from 'prop-types'
 
 import ModalPortal from 'components/modals/ModalPortal'
 import ItemForm from 'components/ItemForm'
 
-import ItemPic from './ItemPic'
+import Loader from 'components/Loader/Loader'
 
 import styles from './Item.module.css'
+
+// dynamic import
+const ItemPic = React.lazy(() => import('./ItemPic'))
 
 const Item = ({ item, media, handleDelete }) => {
 	const [showModal, setShowModal] = useState(false)
@@ -40,9 +42,12 @@ const Item = ({ item, media, handleDelete }) => {
 				<p onClick={togglePic} style={{ fontSize: '11px', padding: '10px' }}>
 					TOGGLE PIC >>
 				</p>
+
+				<Suspense fallback={<Loader />}>
 					{showPic &&
 						<ItemPic key={item.id} src={item.src} />
 					}
+				</Suspense>
 			</div>
 
 			{showModal && (
@@ -55,50 +60,11 @@ const Item = ({ item, media, handleDelete }) => {
 	)
 }
 
-=======
-import React from 'react'
-import PropTypes from 'prop-types'
-
-import styles from './Item.module.css'
-
-const Item = ({ item, media, handleDelete, handleEditItem }) => (
-	<div className={styles.item}>
-		<div className={styles.itemHeader}>
-			<h5 className={styles.title}>{item.title}</h5>
-
-			<button
-				key="edit"
-				className={styles.btnEdit}
-				onClick={() => handleEditItem(item)}>
-				Edit
-			</button>
-			<button
-				key="delete"
-				className={styles.btnDelete}
-				onClick={() => handleDelete(item.id)}>
-				Delete
-			</button>
-		</div>
-		{!media.mobile &&
-			<p className={styles.paragraph}>
-				{item.description
-					? item.description
-					: 'This item has no description'
-				}
-			</p>
-		}
-	</div>
-)
->>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 
 Item.propTypes = {
 	item: PropTypes.object.isRequired,
 	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
-<<<<<<< HEAD
-=======
-	handleEditItem: PropTypes.func.isRequired
->>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
 }
 
 export default Item

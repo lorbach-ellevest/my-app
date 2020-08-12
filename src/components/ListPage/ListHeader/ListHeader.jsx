@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 import ModalPortal from 'components/modals/ModalPortal'
 import ItemForm from 'components/ItemForm'
@@ -28,10 +27,6 @@ const ListHeader = props => {
 			)}
 		</>
 	)
-}
-
-ListHeader.propTypes = {
-	handleClickNew: PropTypes.func.isRequired
 }
 
 export default ListHeader
