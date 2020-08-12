@@ -3,17 +3,15 @@ import PropTypes from 'prop-types'
 
 import styles from './ItemForm.module.css'
 
-const SubmitInput = ({ value, onClick }) => {
-	console.log('rendering SubmitInput');
-	return (
-		<input
-			type="submit"
-			className={styles.btnSubmit}
-	    value={value}
-	    onClick={onClick}
-		/>
-	)
-}
+const SubmitInput = ({ value, onClick }) => (
+	<input
+		type="submit"
+		className={styles.btnSubmit}
+    value={value}
+    onClick={onClick}
+	/>
+)
+
 
 SubmitInput.propTypes = {
 	onClick: PropTypes.func.isRequired,
@@ -24,5 +22,4 @@ SubmitInput.defaultProps = {
 	value: 'Submit',
 }
 
-export default SubmitInput
-// export default React.memo(SubmitInput)
+export default React.memo(SubmitInput)

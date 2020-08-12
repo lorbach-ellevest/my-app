@@ -3,19 +3,22 @@ import PropTypes from 'prop-types'
 
 import styles from './ItemForm.module.css'
 
-const TextInput = ({ value,  onChange }) => {
-	console.log('rendering TextInput');
-	return (
-		<input
-			type="text"
-			className={styles.inputText}
-	    name="title"
-	    value={value}
-			placeholder="Enter activity name"
-	    onChange={onChange}
-		/>
-	)
-}
+/* React.memo note:
+	Recat.memo() returns a new memoized component
+	The memoized content is reused as long as the props are the same on next renderings.
+*/
+
+const TextInput = ({ value,  onChange }) => (
+	<input
+		type="text"
+		className={styles.inputText}
+    name="title"
+    value={value}
+		placeholder="Enter activity name"
+    onChange={onChange}
+	/>
+)
+
 
 TextInput.propTypes = {
   value: PropTypes.string,
@@ -26,10 +29,4 @@ TextInput.defaultProps = {
 	value: '',
 }
 
-export default TextInput
-// export default React.memo(TextInput)
-
-/* React.memo note:
-	Recat.memo() returns a new memoized component
-	The memoized content is reused as long as the props are the same on next renderings.
-*/
+export default React.memo(TextInput)

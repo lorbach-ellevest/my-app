@@ -6,12 +6,9 @@ import styles from './Modal.module.css'
 
 
 /*
-<<<<<<< HEAD
  * Portals provide a way to render children into a DOM node that exists outside the DOM hierarchy
  * of the parent component.
-=======
- * Portals provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
->>>>>>> adds portals, refactors forms, fixes redux, leaves app for demo
+ *
  * ReactDOM.createPortal(this.props.children, contentWrapper)
  */
 
