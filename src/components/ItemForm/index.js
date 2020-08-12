@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 
 import * as itemActions from '../../actions/itemActions.js';
 
-import ItemForm from './ItemForm'
+// import ItemForm from './ItemForm'
+import ItemForm from './ItemFormFn'
 
 const mapStateToProps = state => ({})
 

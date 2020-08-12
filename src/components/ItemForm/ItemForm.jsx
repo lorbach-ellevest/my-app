@@ -17,6 +17,7 @@ class ItemForm extends React.Component {
 			title: undefined,
 		}
 	}
+
 	componentDidMount() {
 		const { item } = this.props
 
