@@ -1,5 +1,6 @@
 ###  About
 This repo is a practical example of how to start using some of React's 16 New Features (One Feature per branch). 
+[Demo slides ](https://docs.google.com/presentation/d/1Dq15CtsiNOZN-W7ZQjf5lyx8F4xY8MhsdN-7yy7-JRY/edit?usp=sharing)
 
 ###  Branches in order of progress
 master                Original Application on React 15
