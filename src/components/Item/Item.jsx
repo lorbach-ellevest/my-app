@@ -7,17 +7,21 @@ import ItemForm from 'components/ItemForm'
 
 import Loader from 'components/Loader/Loader'
 
+import { useMediaQuery } from 'context/MediaContext'
+
 import styles from './Item.module.css'
 
-// dynamic import
 const ItemPic = React.lazy(() => import('./ItemPic'))
 
-const Item = ({ item, media, handleDelete }) => {
+const Item = ({ item, handleDelete }) => {
 	const [showModal, setShowModal] = useState(false)
 	const [showPic, setShowPic] = useState(false)
 
 	const toggleModal = () => setShowModal(!showModal)
 	const togglePic = () => setShowPic(!showPic)
+
+	const mq = useMediaQuery()
+
 	return (
 		<>
 			<div className={styles.item}>
@@ -31,17 +35,10 @@ const Item = ({ item, media, handleDelete }) => {
 						Delete
 					</button>
 				</div>
-				{!media.mobile &&
-					<p className={styles.paragraph}>
-						{item.description
-							? item.description
-							: 'This item has no description'
-						}
-					</p>
-				}
 				<p onClick={togglePic} style={{ fontSize: '11px', padding: '10px' }}>
 					TOGGLE PIC >>
 				</p>
+				<h4>{`You are using a ${mq}`}</h4>
 
 				<Suspense fallback={<Loader />}>
 					{showPic &&
@@ -63,7 +60,6 @@ const Item = ({ item, media, handleDelete }) => {
 
 Item.propTypes = {
 	item: PropTypes.object.isRequired,
-	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
 }
 

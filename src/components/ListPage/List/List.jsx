@@ -16,11 +16,7 @@ const List = props => {
 				<li
 					className={styles.listItem}
 					style={{maxHeight: `${maxh}px`, overflow: 'hidden'}} >
-					<Item
-						media={props.media}
-						item={item}
-						handleDelete={props.handleDelete}
-					/>
+					<Item item={item} handleDelete={props.handleDelete} />
 				</li> }
 		</Motion>
 	)
@@ -36,7 +32,6 @@ return (
 
 List.propTypes = {
 	items: PropTypes.array.isRequired,
-	media: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
 };
 

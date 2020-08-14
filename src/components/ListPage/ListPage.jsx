@@ -11,12 +11,12 @@ import List from './List/List'
 
 import styles from './ListPage.module.css'
 
-const ListPage = ({ actions: { deleteItem }, items, media }) => (
+const ListPage = ({ actions: { deleteItem }, items }) => (
 	<div id="listPage" className={styles.listPage}>
 		<section className={styles.itemsSection}>
 			<ListHeader />
 			<ErrorBoundary>
-				<List items={items} media={media} handleDelete={deleteItem} />
+				<List items={items} handleDelete={deleteItem} />
 			<CounterPortal>
 				<CounterBadge count={items.length} />
 			</CounterPortal>
@@ -29,7 +29,6 @@ const ListPage = ({ actions: { deleteItem }, items, media }) => (
 ListPage.propTypes = {
 	actions: PropTypes.object.isRequired,
 	items: PropTypes.array.isRequired,
-	media: PropTypes.object.isRequired
 };
 
 export default ListPage
